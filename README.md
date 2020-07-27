@@ -1,6 +1,6 @@
 # C++ Cheatsheet
 
-## Errors
+## I. Errors
 
 ### Compiler Errors
 
@@ -53,7 +53,7 @@
 * Logic errors are mistakes made by programmer
 
 
-## Structure of a C++ Program
+## II. Structure of a C++ Program
 
 ### Preprocessor Directives
 
@@ -112,7 +112,7 @@
 
   - Can fail if the entred data cannot be interpreted
 
-### Varibles & Constants
+## III. Varibles & Constants
 
 * *Variables*:
 
