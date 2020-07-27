@@ -114,7 +114,7 @@
 
 ## III. Varibles & Constants
 
-* *Variables*:
+### Variables:
 
   - A variable is an abstraction for a memory location
 
