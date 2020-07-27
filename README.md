@@ -142,7 +142,7 @@
   int age {21}; // C++11 list initialization syntax
   ```
 
-* *C++ Primitives Data Types*:
+### C++ Primitives Data Types:
 
   - Type sizes:
     + expresssed in bits
