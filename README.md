@@ -114,7 +114,7 @@
 
 ## III. Varibles & Constants
 
-### Variables:
+### Variables
 
   - A variable is an abstraction for a memory location
 
@@ -142,7 +142,7 @@
   int age {21}; // C++11 list initialization syntax
   ```
 
-### C++ Primitives Data Types:
+### C++ Primitives Data Types
 
   - Type sizes:
     + expresssed in bits
@@ -166,6 +166,21 @@
     + Precision and size are compiler dependent
   
   - Can use *"sizeof"* operator to check the size in bytes of a type or variable
+
+### Constant
+
+- Like C++ variables
+  + Have Names
+  + Occupy storage
+  + Value cannot change once declared!
+
+- Types of constants
+  + Literal constants
+  + Declared constant ("const" keyword)
+  + Constant expressions ("constexpr" keyword)
+  + Enumerated constants ("enum" keyword)
+  + Defineded constants (#define) -> Don't use in modern C++
+    
   
 
 

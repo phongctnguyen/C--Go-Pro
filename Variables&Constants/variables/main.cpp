@@ -6,7 +6,6 @@ using std::endl;
 
 int main()
 {
-
   cout << "Enter the width of the room: ";
   int room_width{0};
   cin >> room_width;
