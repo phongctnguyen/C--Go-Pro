@@ -1,7 +1,10 @@
 #include <iostream>
 
+using std::boolalpha;
+using std::cin;
 using std::cout;
 using std::endl;
+using std::noboolalpha;
 
 int main()
 {
@@ -57,8 +60,66 @@ int main()
   cout << counter << endl;
 
   result = ++counter;
-  result = counter++;
+  result = ++counter + 10;
+  // result = counter++;
   cout << result << endl;
+
+  /*
+    Equality operator: ==
+    Not Equality operator: !=
+  */
+
+  bool equal_result{false};
+  bool not_equal_result{false};
+
+  int number1{0}, number2{0};
+
+  cout << "Enter 2 integers separated by a space: ";
+  cin >> number1 >> number2;
+  equal_result = (number1 == number2);
+  not_equal_result = (number1 != number2);
+
+  cout << "Comparision result (equal): " << equal_result << endl;
+  cout << "Comparision result (not equal): " << not_equal_result << endl;
+
+  cout << boolalpha;
+  cout << "Comparision result (equal): " << equal_result << endl;
+  cout << "Comparision result (not equal): " << not_equal_result << endl;
+
+  cout << noboolalpha;
+  cout << "Comparision result (equal): " << equal_result << endl;
+  cout << "Comparision result (not equal): " << not_equal_result << endl;
+
+  /*
+    Relational operator: 
+      > greater than
+      >= greater than or equal to
+      < less than
+      <= less than or equal to
+      <=> three-way comparison (C++20)  
+  */
+
+  int x{0}, y{0};
+
+  cout << "Enter 2 integers separated by a space: ";
+  cin >> x >> y;
+
+  cout << boolalpha;
+  cout << x << " > " << y << " : " << (x > y) << endl;
+  cout << x << " >= " << y << " : " << (x >= y) << endl;
+  cout << x << " < " << y << " : " << (x < y) << endl;
+  cout << x << " <= " << y << " : " << (x <= y) << endl;
+
+   /*
+    Logical operator: 
+      not (!)   
+      and (&&)   
+      or (||)   
+  */
+
+  cout << (x > 9 && x < 15) << endl;
+  cout << (x > y || x < 10) << endl;
+  cout << !(y > 10 && y < 20) << endl;
 
   return 0;
 }

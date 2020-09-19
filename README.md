@@ -300,22 +300,22 @@ vector <int> test_scores = {100, 99, 98, 97, 96};
 - Two ways to access vector elements
 
 1) vector_name [element_index]
-Ex: 
+Ex:
 test_scores[0]; // 100
 
 2) vector_name.at(element_index)
-Ex: 
+Ex:
 test_scores.at(1); // 99
 
 - Some methods:
 + size(): Get size of vector
 vector.name.size();
 Ex:
-test_scores.size(); // 5 
+test_scores.size(); // 5
 
 + push_back(): Use to grow vector
 vector_name.push_back(element);
-Ex: 
+Ex:
 test_scores.push_back(95); // 100, 99, 98, 97, 96, 95
 ```
 
@@ -327,24 +327,29 @@ test_scores.push_back(95); // 100, 99, 98, 97, 96, 95
 - Individual elements can be accessed by their position or index
 - First element is at index 0
 - Last element is at index size - 1
-- []  No checking to see if you are out of bounds
+- [] No checking to see if you are out of bounds
 - Provides many useful function that do bound check
 - Elements initialized to zero
 - Very efficient
 - Iteration (looping) is often used to process
 
 **Vectors out of bounds**
+
 - Arrays never do bounds checking
 - Many vector methods provide bounds checking (Ex: at method ...)
 - An exception and error message is generated
 
 ## IV. Statements and Operators
+
 ### Expressions and Statements
+
 **Expressions**
+
 - The most basic building block of a program
 - A sequence of operators and operands that specifies a computation
 - Computes a value from a number of operands
 - ...
+
 ```
 34 // literal
 favorite_number // variable
@@ -354,10 +359,12 @@ a = b // assignment
 ```
 
 **Statements**
+
 - A complete line of code that performs some action
 - Usually terminated with a semi-colon
 - Usually contain expressions
 - C++ has many types of statements (expression, null, compounds, selection, iteration, declaration, jump, try blocks ...)
+
 ```
 int x; // declaration
 x = 5; // assignment
@@ -366,13 +373,58 @@ ig (a > b) cout << "a is greater than b"; // if statement
 ```
 
 **Operators**
+
 - C++ has a rich set of operators
-  + unary, binary, ternary
+  - unary, binary, ternary
 - Common operators can be grouped as follows
-  + assignment
-  + arithmetic
-  + increment/decrement
-  + relational
-  + logical
-  + member access
-  + other
+  - assignment
+  - arithmetic
+  - increment/decrement
+  - relational
+  - logical
+  - member access
+  - other
+
+**Mixed Type Expressions**
+- C++ operations occur on same type operands
+- If operands are of different types, C++ will convert one
+- It could affect calculations results
+- C++ will attempt to automatically convert types (coercion). If it can't, a compiler error will occur
+- Conversions:
+  - Higher vs Lower types are based on the size of the values the type can hold
+  - Type Coercion: conversion of one operand to another data types
+  - Promotion: conversion to a higher type (used in mathematical expressions)
+  - Demotion: conversion to a lower type (used with assignment to lower type)
+```
+2 * 5.2 // 2 is promoted to 2.0
+
+int num {0};
+num = 100.2; // 100.2 is demoted to 100
+
+Explicit Type Casting: static_cast<type>
+int number {100};
+cout << static_cast<double> (number); // 100.0
+```
+
+**Testing Equality**
+- Using == and != operators
+  + Compares the values of 2 expressions
+  + Evaluates to a Boolean (True or False, 1 or 0)
+  + Commonly used in control flow statements
+
+```
+cout << num1 == num2 << endl; // 0 or 1
+cout << std::boolalpha;
+cout << num1 == num2 << endl; // true or false
+cout << std::noboolalpha;
+```
+
+**Compound Assignment**
+![compound-assignment](https://i.ibb.co/6Jqsrnn/compound.png)
+
+**Operator Precedence**
+![operator-precedence](https://i.ibb.co/5x223Dp/precedence.png)
+
+- Use precedence rules when adjacent operators are different
+- Use associativity rules when adjacent operators have the same precedence
+- Use parenthesis to absolutely remove any doubt
