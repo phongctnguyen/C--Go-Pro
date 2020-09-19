@@ -24,7 +24,7 @@ int main()
       / division
       % modulo or remainder (works only with integers)  
   */
-  int result {0};
+  int result{0};
 
   result = num1 + num2;
   cout << result << endl;
@@ -42,6 +42,23 @@ int main()
   cout << result << endl;
 
   // Precedence P(parenthesis) - E(exponent) - M(multiplication) - D(division) - A(addition) - S(subtraction)
+
+  /*
+    Increment operator: ++
+    Decrement operator: --
+    ALERT: Never use it twice for the same variable in the same statement  
+  */
+
+  int counter{10};
+  counter++;
+  cout << counter << endl;
+
+  ++counter;
+  cout << counter << endl;
+
+  result = ++counter;
+  result = counter++;
+  cout << result << endl;
 
   return 0;
 }
