@@ -337,3 +337,42 @@ test_scores.push_back(95); // 100, 99, 98, 97, 96, 95
 - Arrays never do bounds checking
 - Many vector methods provide bounds checking (Ex: at method ...)
 - An exception and error message is generated
+
+## IV. Statements and Operators
+### Expressions and Statements
+**Expressions**
+- The most basic building block of a program
+- A sequence of operators and operands that specifies a computation
+- Computes a value from a number of operands
+- ...
+```
+34 // literal
+favorite_number // variable
+1.5 + 2.8 // addition
+a > b // relational
+a = b // assignment
+```
+
+**Statements**
+- A complete line of code that performs some action
+- Usually terminated with a semi-colon
+- Usually contain expressions
+- C++ has many types of statements (expression, null, compounds, selection, iteration, declaration, jump, try blocks ...)
+```
+int x; // declaration
+x = 5; // assignment
+1.5 + 2.8; // expressions
+ig (a > b) cout << "a is greater than b"; // if statement
+```
+
+**Operators**
+- C++ has a rich set of operators
+  + unary, binary, ternary
+- Common operators can be grouped as follows
+  + assignment
+  + arithmetic
+  + increment/decrement
+  + relational
+  + logical
+  + member access
+  + other
