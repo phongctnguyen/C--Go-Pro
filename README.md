@@ -339,7 +339,7 @@ test_scores.push_back(95); // 100, 99, 98, 97, 96, 95
 - Many vector methods provide bounds checking (Ex: at method ...)
 - An exception and error message is generated
 
-## IV. Statements and Operators
+## V. Statements and Operators
 
 ### Expressions and Statements
 
@@ -386,6 +386,7 @@ ig (a > b) cout << "a is greater than b"; // if statement
   - other
 
 **Mixed Type Expressions**
+
 - C++ operations occur on same type operands
 - If operands are of different types, C++ will convert one
 - It could affect calculations results
@@ -395,6 +396,7 @@ ig (a > b) cout << "a is greater than b"; // if statement
   - Type Coercion: conversion of one operand to another data types
   - Promotion: conversion to a higher type (used in mathematical expressions)
   - Demotion: conversion to a lower type (used with assignment to lower type)
+
 ```
 2 * 5.2 // 2 is promoted to 2.0
 
@@ -407,10 +409,11 @@ cout << static_cast<double> (number); // 100.0
 ```
 
 **Testing Equality**
+
 - Using == and != operators
-  + Compares the values of 2 expressions
-  + Evaluates to a Boolean (True or False, 1 or 0)
-  + Commonly used in control flow statements
+  - Compares the values of 2 expressions
+  - Evaluates to a Boolean (True or False, 1 or 0)
+  - Commonly used in control flow statements
 
 ```
 cout << num1 == num2 << endl; // 0 or 1
@@ -428,3 +431,249 @@ cout << std::noboolalpha;
 - Use precedence rules when adjacent operators are different
 - Use associativity rules when adjacent operators have the same precedence
 - Use parenthesis to absolutely remove any doubt
+
+## VI. Controlling Program Flow
+
+**Program Flow**
+
+- Sequence: Ordering statements sequentially
+
+- Selection: Making decisions
+  - if
+  - if - else
+  - nested if
+  - switch
+  - Conditional operator ? :
+- Iteration: Looping or repeating
+  - for loop
+  - range-based for loop
+  - while loop
+  - do - while loop
+  - continue and break
+  - infinite loops
+  - nested loops
+
+### Selection
+
+**If Statement**
+
+```
+if (expr) {
+  statement;
+}
+```
+
+- If the expression is true then execute the statement
+- If the expression is false then skip the statement
+
+![if-statement](https://i.ibb.co/r0xxhFS/if.png)
+
+```
+Ex:
+
+if (num > 10) cout << "Num is greater than 10";
+
+if (health < 100 && player_healed)
+  health = 100;
+```
+
+- Block statement
+
+![block-statement](https://i.ibb.co/L0byvDT/block.png)
+
+- Create a block of code by including more than one statement in code block {}
+- Blocks can also contain variable declarations
+- These variables are visible only within the block - local scope
+
+```
+{
+  // variable declarations
+  statement1;
+  statement2;
+  ...
+}
+```
+
+**If - Else-If - Else**
+
+```
+if (expr)
+  statement1;
+else
+  statement2;
+```
+
+- If the expression is true then execute the statement1
+- If the expression is false then execute the statement2
+
+![if-else](https://i.ibb.co/bs5n2z2/if-else.png)
+
+![if-elseif-else](https://i.ibb.co/HxKtVw8/f-elseif-else.png)
+
+**Nested If**
+
+```
+if (expr1)
+  if (expr2)
+    statement1;
+  else
+    statement2;
+```
+
+![nested-if](https://i.ibb.co/XS7by2T/nested-if.png)
+
+**Switch**
+
+```
+switch (integer_control_expr)
+{
+  case expression_1: statement1; break;
+  case expression_2: statement2; break;
+  ...
+  case expression_N: statementN; break;
+  default: statement_default
+}
+```
+
+![switch-with-enum](https://i.ibb.co/MSvG1CP/switch-enum.png)
+
+- The control expression must evaluate to an integer type
+- The case expressions must be constant expressions that evaluate to integer or integers literals
+- Once a match occurs all following case sections are executes UNTIL a break is reached the switch complete
+- Best practice:
+  + provide break statement for each case
+  + default is optional, but should be handled
+
+**Conditional Operator**
+```
+(cond_expr) ? expr1 : expr2
+```
+
+- cond_expr evaluates to a boolean expression
+  + if cond_expr is true then the value of expr1 is returned
+  + if cond_expr is false then the value of expr2 is returned
+- Similar to if-else construct
+- Ternary operator
+- Very useful when used inline
+- Very easy to abuse
+
+### Looping
+
+**Iteration**
+- The third basic building block of programming
+  + sequence, selection, iteration
+- Iteration or repetition
+- Allows the execution of a statement of block of statements repeatedly
+- Loops are made up a loop condition and the body which contains the statements to repeat
+- Use-cases:
+  + a specific number of times
+  + for each element in a collection
+  + while a specific condition remains true
+  + until a specific condition becomes false
+  + until we reach the end of some input stream
+  + forever
+  + ...
+
+**Looping Constructs**
+- for loop
+  + iterate a specific number of times
+- range-based for loop
+  + one iteration for each element in a range or collection
+- while loop
+  + iterate while a condition remains true
+  + stop when the condition becomes false
+  + check the condition at the beginning of every iteration
+- do-while loop
+  + iterate while a condition remains true
+  + stop when the condition becomes false
+  + check the condition at the end of every iteration
+
+**For loop**
+```
+for (initialization; condition; increment)
+  statement;
+
+for (initialization; condition; increment) {
+  statement(s);
+}
+```
+![example-1](https://i.ibb.co/wJp08pt/example1.png)
+![example-2](https://i.ibb.co/3pWV0Y9/example2.png)
+![example-3](https://i.ibb.co/vw7hwNK/example.png)
+
+- The basic for loop is very clear and concise
+- Since the for loop's expressions are all optional, it is possible to have
+  + no initialization
+  + no test
+  + no increment
+```
+for (;;)
+  cout << "Endless loop" << endl;
+```
+
+**range-based for loop**
+```
+for (var_type var_name : sequence)
+  statement;
+
+for (var_type var_name : sequence) {
+  statements; 
+}
+```
+
+![range-based-1](https://i.ibb.co/wRx5nZr/range-based1.png)
+![range-based-2](https://i.ibb.co/TLqcsC5/range-based2.png)
+![range-based-3](https://i.ibb.co/hFNtJKG/range-based3.png)
+![range-based-4](https://i.ibb.co/rvVW361/range-based4.png)
+
+**while loop**
+```
+while (expression)
+  statement;
+
+while (expression) {
+  statements; 
+}
+```
+
+![while-loop-1](https://i.ibb.co/crwV0t7/while-1.png)
+![while-loop-2](https://i.ibb.co/QrVRq9H/while-2.png)
+![while-loop-3](https://i.ibb.co/RvJ597t/while-3.png)
+![while-loop-4](https://i.ibb.co/Y3zCMLY/while-4.png)
+
+**do-while loop**
+```
+do {
+  statements;
+} while (expression;
+```
+
+![do-while](https://i.ibb.co/Wns3snp/do-while.png)
+
+**continue and break**
+- continue:
+  + no further statements in the body of the loop are executed
+  + control immediately goes directly to the beginning of the loop for the next iteration
+
+- break:
+  + no further statements in the body of the loop are executed
+  + loop is immediately
+  + control immediately goes to the statement following the loop construct
+
+**infinite loops**
+- loops whose condition expression always evaluate to true
+- usually this in unintended and a programmer error
+- sometimes programmers use infinite loops and include and break statements in the body to control them
+- sometimes infinite loops are exactly what we need
+  + event loop in an event-driven program
+  + operating system
+
+**nested loops**
+- loop nested within another loop
+- can be many as many levels deep as the program needs
+- very useful with multi-dimensional data structures
+- outer loop vs inner loop
+
+![nested-1](https://i.ibb.co/ySBGrbS/nested1.png)
+![nested-2](https://i.ibb.co/HNgnPkt/nested2.png)
+![nested-3](https://i.ibb.co/6yHTwZp/nested3.png)
