@@ -541,17 +541,18 @@ switch (integer_control_expr)
 - The case expressions must be constant expressions that evaluate to integer or integers literals
 - Once a match occurs all following case sections are executes UNTIL a break is reached the switch complete
 - Best practice:
-  + provide break statement for each case
-  + default is optional, but should be handled
+  - provide break statement for each case
+  - default is optional, but should be handled
 
 **Conditional Operator**
+
 ```
 (cond_expr) ? expr1 : expr2
 ```
 
 - cond_expr evaluates to a boolean expression
-  + if cond_expr is true then the value of expr1 is returned
-  + if cond_expr is false then the value of expr2 is returned
+  - if cond_expr is true then the value of expr1 is returned
+  - if cond_expr is false then the value of expr2 is returned
 - Similar to if-else construct
 - Ternary operator
 - Very useful when used inline
@@ -560,35 +561,38 @@ switch (integer_control_expr)
 ### Looping
 
 **Iteration**
+
 - The third basic building block of programming
-  + sequence, selection, iteration
+  - sequence, selection, iteration
 - Iteration or repetition
 - Allows the execution of a statement of block of statements repeatedly
 - Loops are made up a loop condition and the body which contains the statements to repeat
 - Use-cases:
-  + a specific number of times
-  + for each element in a collection
-  + while a specific condition remains true
-  + until a specific condition becomes false
-  + until we reach the end of some input stream
-  + forever
-  + ...
+  - a specific number of times
+  - for each element in a collection
+  - while a specific condition remains true
+  - until a specific condition becomes false
+  - until we reach the end of some input stream
+  - forever
+  - ...
 
 **Looping Constructs**
+
 - for loop
-  + iterate a specific number of times
+  - iterate a specific number of times
 - range-based for loop
-  + one iteration for each element in a range or collection
+  - one iteration for each element in a range or collection
 - while loop
-  + iterate while a condition remains true
-  + stop when the condition becomes false
-  + check the condition at the beginning of every iteration
+  - iterate while a condition remains true
+  - stop when the condition becomes false
+  - check the condition at the beginning of every iteration
 - do-while loop
-  + iterate while a condition remains true
-  + stop when the condition becomes false
-  + check the condition at the end of every iteration
+  - iterate while a condition remains true
+  - stop when the condition becomes false
+  - check the condition at the end of every iteration
 
 **For loop**
+
 ```
 for (initialization; condition; increment)
   statement;
@@ -597,27 +601,30 @@ for (initialization; condition; increment) {
   statement(s);
 }
 ```
+
 ![example-1](https://i.ibb.co/wJp08pt/example1.png)
 ![example-2](https://i.ibb.co/3pWV0Y9/example2.png)
 ![example-3](https://i.ibb.co/vw7hwNK/example.png)
 
 - The basic for loop is very clear and concise
 - Since the for loop's expressions are all optional, it is possible to have
-  + no initialization
-  + no test
-  + no increment
+  - no initialization
+  - no test
+  - no increment
+
 ```
 for (;;)
   cout << "Endless loop" << endl;
 ```
 
 **range-based for loop**
+
 ```
 for (var_type var_name : sequence)
   statement;
 
 for (var_type var_name : sequence) {
-  statements; 
+  statements;
 }
 ```
 
@@ -627,12 +634,13 @@ for (var_type var_name : sequence) {
 ![range-based-4](https://i.ibb.co/rvVW361/range-based4.png)
 
 **while loop**
+
 ```
 while (expression)
   statement;
 
 while (expression) {
-  statements; 
+  statements;
 }
 ```
 
@@ -642,6 +650,7 @@ while (expression) {
 ![while-loop-4](https://i.ibb.co/Y3zCMLY/while-4.png)
 
 **do-while loop**
+
 ```
 do {
   statements;
@@ -651,24 +660,28 @@ do {
 ![do-while](https://i.ibb.co/Wns3snp/do-while.png)
 
 **continue and break**
+
 - continue:
-  + no further statements in the body of the loop are executed
-  + control immediately goes directly to the beginning of the loop for the next iteration
+
+  - no further statements in the body of the loop are executed
+  - control immediately goes directly to the beginning of the loop for the next iteration
 
 - break:
-  + no further statements in the body of the loop are executed
-  + loop is immediately
-  + control immediately goes to the statement following the loop construct
+  - no further statements in the body of the loop are executed
+  - loop is immediately
+  - control immediately goes to the statement following the loop construct
 
 **infinite loops**
+
 - loops whose condition expression always evaluate to true
 - usually this in unintended and a programmer error
 - sometimes programmers use infinite loops and include and break statements in the body to control them
 - sometimes infinite loops are exactly what we need
-  + event loop in an event-driven program
-  + operating system
+  - event loop in an event-driven program
+  - operating system
 
 **nested loops**
+
 - loop nested within another loop
 - can be many as many levels deep as the program needs
 - very useful with multi-dimensional data structures
@@ -677,3 +690,177 @@ do {
 ![nested-1](https://i.ibb.co/ySBGrbS/nested1.png)
 ![nested-2](https://i.ibb.co/HNgnPkt/nested2.png)
 ![nested-3](https://i.ibb.co/6yHTwZp/nested3.png)
+
+## VII. Characters and Strings
+
+**Character functions**
+
+```
+#include <cctype>
+function_name (char)
+```
+
+- functions for testing characters
+- functions for converting character case
+- Testing character:
+
+![testing-character](https://i.ibb.co/4mgYCb0/testing-character.png)
+
+- Converting character:
+
+![converting-character](https://i.ibb.co/8jtw3Jm/converting.png)
+
+**C-style Strings**
+
+- Sequence of characters
+  - contiguous in memory
+  - implemented as an array of characters
+  - terminated by a null character(null - character with a value of zero)
+  - referred to as zero or null terminated strings
+- String literal
+  - sequence of characters in double quotes (eg: "Frank")
+  - constant
+  - terminated with null character
+
+```
+* Declaring variables
+char my_name [] {"Phong"}; // Frank\0
+my_name[5] = 'y'; // Problem
+
+char name [8];
+name = "Frank"; // Error
+strcpy(name, "Phong"); // OK
+```
+
+- Functions that work with C-style Strings: (#include <cstring>)
+  - Copying
+  - Concatenation
+  - Comparison
+  - Searching
+  - ...
+
+![cstring](https://i.ibb.co/yVLRbbS/cstring.png)
+
+- Functions to convert C-style Strings to: (#include <cstdlib>)
+  - integer
+  - float
+  - long
+  - ...
+
+**C++ Strings**
+
+- std::string is a Class in the Standard Template Library
+- #include<string>
+- std namespace
+- contiguous in memory
+- dynamic size
+- work with input and output streams
+- lots of useful member functions
+- our familiar operators can be used (+, =, <, <=, >, >=, +=, ==, !=, [] ...)
+- can be easily converted to C-style Strings if needed
+- safer
+
+```
+* Declaring and initializing
+#include <string>
+using namespace std;
+
+string s1;
+string s2 {"Frank"};
+string s3 {2}; // Frank
+string s4 {"Frank", 3}; // Fra
+string s5 {s3, 0, 2}; // Fr
+string s6 (3, 'X'); // XXX
+
+* Assignment: =
+string s1;
+s1 = "Hello World";
+```
+
+- Concatenation:
+
+![concatenation](https://i.ibb.co/CsbtWsK/concatenation.png)
+
+- Accessing:
+
+![accessing](https://i.ibb.co/MRX9SmZ/accessing.png)
+
+- Comparing
+
+![comparing](https://i.ibb.co/Tr2L2pV/comparing.png)
+
+![comparing-example](https://i.ibb.co/gr0fhTx/comparing-ex.png)
+
+- Substrings: substr()
+
+![substrings-substr](https://i.ibb.co/HtGZHKW/substrings.png)
+
+- Substrings: find()
+
+![substrings-find](https://i.ibb.co/L5m2MCD/substrings-find.png)
+
+- Removing characters - erase() and clear()
+
+![removing](https://i.ibb.co/WcGJscQ/removing.png)
+
+- Other methods
+
+![length](https://i.ibb.co/4PDpyvm/length.png)
+
+![getline](https://i.ibb.co/5rCFcCs/getline.png)
+
+## VIII. Functions
+
+**What is function**
+
+- C++ Programs
+
+  - C++ STL (functions and classes)
+  - Third-party libraries (functions and classes)
+  - Our own functions and classes
+
+- Functions allow the modularization of a program
+  - Separate code into logical self-contained units
+  - These units can be reused
+
+![modularized](https://i.ibb.co/VMwLkNj/modularized.png)
+
+**Defining Functions**
+
+- name
+  + the name of the function
+  + same rules as for variables
+  + should be meaningful
+  + usually a verb or verb phrase
+
+- parameter list
+  + the variables passed into the function
+  + their types must be specified
+  + 
+- return type
+  + the type of the data that is returned from the function
+
+- body
+  + the statements that are executed when the function is called
+  + in curly braces {}
+
+![defining-functions](https://i.ibb.co/MGyyyPc/defining-function.png)
+
+**Function Protoypes**
+- The compiler msut know about a  function before it is used
+
+- Define functions before calling them
+  + OK for small programs
+  + Not a practical solution for larger programs
+
+- Use function prototypes
+  + Tells the compiler what it needs to know without a full function definition
+  + Also called forward declarations
+  + Placed at the beginning o the program
+  + Also used in our own header files (.h) - more about  this later
+
+```
+int function_name(int); // prototypes
+int function_name(int a); // prototypes
+```
+**Function Protoypes**
